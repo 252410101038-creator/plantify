@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\657ba50e-f1b8-4521-91d4-f45c6c3e1d9b.png" />
+    <None Remove="Resources\a7e06774-5e62-4ee1-a088-40968eabf182.png" />
+    <None Remove="Resources\complementary.jpg" />
+    <None Remove="Resources\Ethiopia Natural.jpg" />
+    <None Remove="Resources\Grass Advertising.jpg" />
+    <None Remove="Resources\harvest.jpg" />
+    <None Remove="Resources\harvest1.jpg" />
+    <None Remove="Resources\panen potrait.jpg" />
+    <None Remove="Resources\Photo from n.jpg" />
+    <None Remove="Resources\plantify.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\657ba50e-f1b8-4521-91d4-f45c6c3e1d9b.png" />
+    <EmbeddedResource Include="Resources\a7e06774-5e62-4ee1-a088-40968eabf182.png" />
+    <EmbeddedResource Include="Resources\complementary.jpg" />
+    <EmbeddedResource Include="Resources\Ethiopia Natural.jpg" />
+    <EmbeddedResource Include="Resources\Grass Advertising.jpg" />
+    <EmbeddedResource Include="Resources\harvest.jpg" />
+    <EmbeddedResource Include="Resources\harvest1.jpg" />
+    <EmbeddedResource Include="Resources\panen potrait.jpg" />
+    <EmbeddedResource Include="Resources\Photo from n.jpg" />
+    <EmbeddedResource Include="Resources\plantify.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
