@@ -6,7 +6,7 @@ namespace plantify.Database
     public class DBConnection
     {
         private static string connectionString =
-    "Host=localhost;Port=5432;Database=plantifydb;Username=postgres;Password=123;";
+    "Host=localhost;Port=5432;Database=plantifydb;Username=postgres;Password=230207;";
 
         public static NpgsqlConnection GetConnection()
         {

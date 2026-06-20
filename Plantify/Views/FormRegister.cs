@@ -95,5 +95,10 @@ namespace plantify.Views
             formLogin.Show();
             this.Close();
         }
+
+        private void FormRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

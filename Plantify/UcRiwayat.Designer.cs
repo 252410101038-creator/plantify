@@ -39,9 +39,10 @@
             lblIdTransaksi.AccessibleRole = AccessibleRole.PageTab;
             lblIdTransaksi.Font = new Font("Georgia", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblIdTransaksi.ForeColor = Color.FromArgb(75, 96, 67);
-            lblIdTransaksi.Location = new Point(3, 4);
+            lblIdTransaksi.Location = new Point(4, 7);
+            lblIdTransaksi.Margin = new Padding(4, 0, 4, 0);
             lblIdTransaksi.Name = "lblIdTransaksi";
-            lblIdTransaksi.Size = new Size(32, 23);
+            lblIdTransaksi.Size = new Size(46, 38);
             lblIdTransaksi.TabIndex = 0;
             lblIdTransaksi.Text = "001";
             lblIdTransaksi.TextAlign = ContentAlignment.MiddleLeft;
@@ -50,9 +51,10 @@
             // 
             lblNamaBibit.Font = new Font("Microsoft Sans Serif", 8.25F);
             lblNamaBibit.ForeColor = Color.FromArgb(75, 96, 67);
-            lblNamaBibit.Location = new Point(41, 4);
+            lblNamaBibit.Location = new Point(59, 7);
+            lblNamaBibit.Margin = new Padding(4, 0, 4, 0);
             lblNamaBibit.Name = "lblNamaBibit";
-            lblNamaBibit.Size = new Size(111, 23);
+            lblNamaBibit.Size = new Size(159, 38);
             lblNamaBibit.TabIndex = 1;
             lblNamaBibit.Text = "Bibit Tomat";
             lblNamaBibit.TextAlign = ContentAlignment.MiddleLeft;
@@ -61,9 +63,10 @@
             // 
             lblStatusPesanan.Font = new Font("Microsoft Sans Serif", 8.25F);
             lblStatusPesanan.ForeColor = Color.FromArgb(75, 96, 67);
-            lblStatusPesanan.Location = new Point(158, 4);
+            lblStatusPesanan.Location = new Point(211, 7);
+            lblStatusPesanan.Margin = new Padding(4, 0, 4, 0);
             lblStatusPesanan.Name = "lblStatusPesanan";
-            lblStatusPesanan.Size = new Size(102, 23);
+            lblStatusPesanan.Size = new Size(161, 38);
             lblStatusPesanan.TabIndex = 2;
             lblStatusPesanan.Text = "Menunggu Diproses";
             lblStatusPesanan.TextAlign = ContentAlignment.MiddleLeft;
@@ -72,24 +75,26 @@
             // 
             lblTotalBayar.Font = new Font("Microsoft Sans Serif", 8.25F);
             lblTotalBayar.ForeColor = Color.FromArgb(75, 96, 67);
-            lblTotalBayar.Location = new Point(266, 4);
+            lblTotalBayar.Location = new Point(380, 7);
+            lblTotalBayar.Margin = new Padding(4, 0, 4, 0);
             lblTotalBayar.Name = "lblTotalBayar";
-            lblTotalBayar.Size = new Size(81, 23);
+            lblTotalBayar.Size = new Size(116, 38);
             lblTotalBayar.TabIndex = 3;
             lblTotalBayar.Text = "Rp 99.999.999";
             lblTotalBayar.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // UcRiwayat
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(221, 234, 209);
             Controls.Add(lblTotalBayar);
             Controls.Add(lblStatusPesanan);
             Controls.Add(lblNamaBibit);
             Controls.Add(lblIdTransaksi);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "UcRiwayat";
-            Size = new Size(350, 30);
+            Size = new Size(500, 50);
             ResumeLayout(false);
         }
 

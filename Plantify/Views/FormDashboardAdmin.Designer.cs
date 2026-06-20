@@ -42,10 +42,10 @@
             btnKelolaKatalog.BackColor = Color.FromArgb(75, 96, 67);
             btnKelolaKatalog.Font = new Font("Georgia", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnKelolaKatalog.ForeColor = Color.White;
-            btnKelolaKatalog.Location = new Point(45, 170);
-            btnKelolaKatalog.Margin = new Padding(3, 2, 3, 2);
+            btnKelolaKatalog.Location = new Point(64, 283);
+            btnKelolaKatalog.Margin = new Padding(4, 3, 4, 3);
             btnKelolaKatalog.Name = "btnKelolaKatalog";
-            btnKelolaKatalog.Size = new Size(276, 58);
+            btnKelolaKatalog.Size = new Size(394, 97);
             btnKelolaKatalog.TabIndex = 0;
             btnKelolaKatalog.Text = "Kelola Katalog";
             btnKelolaKatalog.UseVisualStyleBackColor = false;
@@ -56,23 +56,24 @@
             btnLaporanKeuangan.BackColor = Color.FromArgb(75, 96, 67);
             btnLaporanKeuangan.Font = new Font("Georgia", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLaporanKeuangan.ForeColor = Color.White;
-            btnLaporanKeuangan.Location = new Point(379, 170);
-            btnLaporanKeuangan.Margin = new Padding(3, 2, 3, 2);
+            btnLaporanKeuangan.Location = new Point(541, 283);
+            btnLaporanKeuangan.Margin = new Padding(4, 3, 4, 3);
             btnLaporanKeuangan.Name = "btnLaporanKeuangan";
-            btnLaporanKeuangan.Size = new Size(276, 58);
+            btnLaporanKeuangan.Size = new Size(394, 97);
             btnLaporanKeuangan.TabIndex = 1;
             btnLaporanKeuangan.Text = "Laporan Keuangan";
             btnLaporanKeuangan.UseVisualStyleBackColor = false;
+            btnLaporanKeuangan.Click += btnLaporanKeuangan_Click;
             // 
             // btnKelolaTransaksi
             // 
             btnKelolaTransaksi.BackColor = Color.FromArgb(75, 96, 67);
             btnKelolaTransaksi.Font = new Font("Georgia", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnKelolaTransaksi.ForeColor = Color.White;
-            btnKelolaTransaksi.Location = new Point(45, 253);
-            btnKelolaTransaksi.Margin = new Padding(3, 2, 3, 2);
+            btnKelolaTransaksi.Location = new Point(64, 422);
+            btnKelolaTransaksi.Margin = new Padding(4, 3, 4, 3);
             btnKelolaTransaksi.Name = "btnKelolaTransaksi";
-            btnKelolaTransaksi.Size = new Size(276, 58);
+            btnKelolaTransaksi.Size = new Size(394, 97);
             btnKelolaTransaksi.TabIndex = 2;
             btnKelolaTransaksi.Text = "Kelola Transaksi";
             btnKelolaTransaksi.UseVisualStyleBackColor = false;
@@ -83,10 +84,10 @@
             btnLogout.BackColor = Color.FromArgb(75, 96, 67);
             btnLogout.Font = new Font("Georgia", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogout.ForeColor = Color.White;
-            btnLogout.Location = new Point(379, 253);
-            btnLogout.Margin = new Padding(3, 2, 3, 2);
+            btnLogout.Location = new Point(541, 422);
+            btnLogout.Margin = new Padding(4, 3, 4, 3);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(276, 58);
+            btnLogout.Size = new Size(394, 97);
             btnLogout.TabIndex = 3;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = false;
@@ -98,9 +99,10 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Georgia", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(75, 96, 67);
-            label1.Location = new Point(160, 107);
+            label1.Location = new Point(229, 178);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(392, 35);
+            label1.Size = new Size(588, 51);
             label1.TabIndex = 4;
             label1.Text = "Selamat Datang, Admin!";
             // 
@@ -109,20 +111,20 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = Plantify.Properties.Resources.plantify;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(580, 9);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(829, 15);
+            pictureBox1.Margin = new Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(109, 46);
+            pictureBox1.Size = new Size(156, 77);
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
             // FormDashboardAdmin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Plantify.Properties.Resources.Photo_from_n;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(1000, 563);
             ControlBox = false;
             Controls.Add(pictureBox1);
             Controls.Add(label1);
@@ -130,7 +132,7 @@
             Controls.Add(btnKelolaTransaksi);
             Controls.Add(btnLaporanKeuangan);
             Controls.Add(btnKelolaKatalog);
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "FormDashboardAdmin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormDashboardAdmin";

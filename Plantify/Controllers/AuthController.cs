@@ -28,11 +28,12 @@ namespace plantify.Controllers
                         {
                             return new Customer(
                                 Convert.ToInt32(reader["id_user"]),
-                                reader["nama_user"].ToString(),
-                                reader["email"].ToString(),
-                                reader["email"].ToString(),
-                                reader["alamat"].ToString(),
-                                reader["no_telepon"].ToString()
+                                reader["nama_user"].ToString(),   // nama
+                                reader["email"].ToString(),       // email
+                                reader["nama_user"].ToString(),   // username
+                                "",                               // password
+                                reader["alamat"].ToString(),      // alamat
+                                reader["no_telepon"].ToString()   // no hp
                             );
                         }
                     }

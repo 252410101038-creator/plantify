@@ -32,6 +32,7 @@
             lblJudul = new Label();
             flpPesanan = new FlowLayoutPanel();
             panelDetail = new Panel();
+            lblInfoAwal = new Label();
             btnTolak = new Button();
             btnTerima = new Button();
             lblNoTelepon = new Label();
@@ -56,7 +57,6 @@
             lblNamaCustomer = new Label();
             lblJumlah = new Label();
             lblNamaBibit = new Label();
-            lblInfoAwal = new Label();
             panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBuktiTransfer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBibit).BeginInit();
@@ -68,9 +68,10 @@
             btnKembali.FlatStyle = FlatStyle.Flat;
             btnKembali.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnKembali.ForeColor = Color.White;
-            btnKembali.Location = new Point(38, 19);
+            btnKembali.Location = new Point(54, 32);
+            btnKembali.Margin = new Padding(4, 5, 4, 5);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(99, 25);
+            btnKembali.Size = new Size(141, 42);
             btnKembali.TabIndex = 29;
             btnKembali.Text = "Kembali";
             btnKembali.UseVisualStyleBackColor = false;
@@ -82,9 +83,10 @@
             lblJudul.BackColor = Color.FromArgb(221, 234, 209);
             lblJudul.Font = new Font("Georgia", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblJudul.ForeColor = Color.FromArgb(75, 96, 67);
-            lblJudul.Location = new Point(33, 49);
+            lblJudul.Location = new Point(47, 82);
+            lblJudul.Margin = new Padding(4, 0, 4, 0);
             lblJudul.Name = "lblJudul";
-            lblJudul.Size = new Size(203, 29);
+            lblJudul.Size = new Size(301, 41);
             lblJudul.TabIndex = 30;
             lblJudul.Text = "Kelola Pesanan";
             lblJudul.TextAlign = ContentAlignment.MiddleLeft;
@@ -93,9 +95,10 @@
             // 
             flpPesanan.AutoScroll = true;
             flpPesanan.BackColor = Color.White;
-            flpPesanan.Location = new Point(38, 85);
+            flpPesanan.Location = new Point(54, 142);
+            flpPesanan.Margin = new Padding(4, 5, 4, 5);
             flpPesanan.Name = "flpPesanan";
-            flpPesanan.Size = new Size(223, 219);
+            flpPesanan.Size = new Size(319, 365);
             flpPesanan.TabIndex = 31;
             // 
             // panelDetail
@@ -126,10 +129,22 @@
             panelDetail.Controls.Add(lblNamaCustomer);
             panelDetail.Controls.Add(lblJumlah);
             panelDetail.Controls.Add(lblNamaBibit);
-            panelDetail.Location = new Point(267, 85);
+            panelDetail.Location = new Point(381, 142);
+            panelDetail.Margin = new Padding(4, 5, 4, 5);
             panelDetail.Name = "panelDetail";
-            panelDetail.Size = new Size(396, 219);
+            panelDetail.Size = new Size(566, 365);
             panelDetail.TabIndex = 32;
+            // 
+            // lblInfoAwal
+            // 
+            lblInfoAwal.Font = new Font("Georgia", 6.75F, FontStyle.Bold);
+            lblInfoAwal.ForeColor = Color.FromArgb(75, 96, 67);
+            lblInfoAwal.Location = new Point(1, 2);
+            lblInfoAwal.Name = "lblInfoAwal";
+            lblInfoAwal.Size = new Size(564, 363);
+            lblInfoAwal.TabIndex = 33;
+            lblInfoAwal.Text = "Pilih transaksi untuk melihat detail";
+            lblInfoAwal.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnTolak
             // 
@@ -137,9 +152,10 @@
             btnTolak.FlatStyle = FlatStyle.Flat;
             btnTolak.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTolak.ForeColor = Color.White;
-            btnTolak.Location = new Point(188, 191);
+            btnTolak.Location = new Point(269, 318);
+            btnTolak.Margin = new Padding(4, 5, 4, 5);
             btnTolak.Name = "btnTolak";
-            btnTolak.Size = new Size(99, 25);
+            btnTolak.Size = new Size(141, 42);
             btnTolak.TabIndex = 33;
             btnTolak.Text = "Tolak";
             btnTolak.UseVisualStyleBackColor = false;
@@ -151,9 +167,10 @@
             btnTerima.FlatStyle = FlatStyle.Flat;
             btnTerima.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTerima.ForeColor = Color.White;
-            btnTerima.Location = new Point(293, 191);
+            btnTerima.Location = new Point(419, 318);
+            btnTerima.Margin = new Padding(4, 5, 4, 5);
             btnTerima.Name = "btnTerima";
-            btnTerima.Size = new Size(99, 25);
+            btnTerima.Size = new Size(141, 42);
             btnTerima.TabIndex = 33;
             btnTerima.Text = "Terima";
             btnTerima.UseVisualStyleBackColor = false;
@@ -163,10 +180,9 @@
             // 
             lblNoTelepon.Font = new Font("Georgia", 7F);
             lblNoTelepon.ForeColor = Color.FromArgb(75, 96, 67);
-            lblNoTelepon.Location = new Point(244, 25);
-            lblNoTelepon.Margin = new Padding(2, 0, 2, 0);
+            lblNoTelepon.Location = new Point(349, 42);
             lblNoTelepon.Name = "lblNoTelepon";
-            lblNoTelepon.Size = new Size(150, 19);
+            lblNoTelepon.Size = new Size(214, 32);
             lblNoTelepon.TabIndex = 23;
             lblNoTelepon.Text = "-";
             lblNoTelepon.TextAlign = ContentAlignment.MiddleRight;
@@ -175,10 +191,9 @@
             // 
             lblAlamat.Font = new Font("Georgia", 7F);
             lblAlamat.ForeColor = Color.FromArgb(75, 96, 67);
-            lblAlamat.Location = new Point(244, 43);
-            lblAlamat.Margin = new Padding(2, 0, 2, 0);
+            lblAlamat.Location = new Point(349, 72);
             lblAlamat.Name = "lblAlamat";
-            lblAlamat.Size = new Size(150, 19);
+            lblAlamat.Size = new Size(214, 32);
             lblAlamat.TabIndex = 22;
             lblAlamat.Text = "-";
             lblAlamat.TextAlign = ContentAlignment.MiddleRight;
@@ -187,10 +202,9 @@
             // 
             label2.Font = new Font("Georgia", 6.75F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(75, 96, 67);
-            label2.Location = new Point(108, 25);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(154, 42);
             label2.Name = "label2";
-            label2.Size = new Size(111, 19);
+            label2.Size = new Size(159, 32);
             label2.TabIndex = 21;
             label2.Text = "No Telepon";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -199,10 +213,9 @@
             // 
             label1.Font = new Font("Georgia", 6.75F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(75, 96, 67);
-            label1.Location = new Point(108, 43);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(154, 72);
             label1.Name = "label1";
-            label1.Size = new Size(111, 19);
+            label1.Size = new Size(159, 32);
             label1.TabIndex = 20;
             label1.Text = "Alamat";
             label1.TextAlign = ContentAlignment.MiddleLeft;
@@ -211,10 +224,9 @@
             // 
             label15.Font = new Font("Georgia", 6.75F, FontStyle.Bold);
             label15.ForeColor = Color.FromArgb(75, 96, 67);
-            label15.Location = new Point(108, 169);
-            label15.Margin = new Padding(2, 0, 2, 0);
+            label15.Location = new Point(154, 282);
             label15.Name = "label15";
-            label15.Size = new Size(111, 19);
+            label15.Size = new Size(159, 32);
             label15.TabIndex = 19;
             label15.Text = "Jumlah";
             label15.TextAlign = ContentAlignment.MiddleLeft;
@@ -223,10 +235,9 @@
             // 
             label14.Font = new Font("Georgia", 6.75F, FontStyle.Bold);
             label14.ForeColor = Color.FromArgb(75, 96, 67);
-            label14.Location = new Point(108, 151);
-            label14.Margin = new Padding(2, 0, 2, 0);
+            label14.Location = new Point(154, 252);
             label14.Name = "label14";
-            label14.Size = new Size(111, 19);
+            label14.Size = new Size(159, 32);
             label14.TabIndex = 18;
             label14.Text = "Nama Bibit";
             label14.TextAlign = ContentAlignment.MiddleLeft;
@@ -235,10 +246,9 @@
             // 
             label13.Font = new Font("Georgia", 6.75F, FontStyle.Bold);
             label13.ForeColor = Color.FromArgb(75, 96, 67);
-            label13.Location = new Point(108, 133);
-            label13.Margin = new Padding(2, 0, 2, 0);
+            label13.Location = new Point(154, 222);
             label13.Name = "label13";
-            label13.Size = new Size(111, 19);
+            label13.Size = new Size(159, 32);
             label13.TabIndex = 17;
             label13.Text = "Estimasi";
             label13.TextAlign = ContentAlignment.MiddleLeft;
@@ -247,10 +257,9 @@
             // 
             label12.Font = new Font("Georgia", 6.75F, FontStyle.Bold);
             label12.ForeColor = Color.FromArgb(75, 96, 67);
-            label12.Location = new Point(108, 115);
-            label12.Margin = new Padding(2, 0, 2, 0);
+            label12.Location = new Point(154, 192);
             label12.Name = "label12";
-            label12.Size = new Size(111, 19);
+            label12.Size = new Size(159, 32);
             label12.TabIndex = 16;
             label12.Text = "Total Bayar";
             label12.TextAlign = ContentAlignment.MiddleLeft;
@@ -259,10 +268,9 @@
             // 
             label11.Font = new Font("Georgia", 6.75F, FontStyle.Bold);
             label11.ForeColor = Color.FromArgb(75, 96, 67);
-            label11.Location = new Point(108, 97);
-            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Location = new Point(154, 162);
             label11.Name = "label11";
-            label11.Size = new Size(111, 19);
+            label11.Size = new Size(159, 32);
             label11.TabIndex = 15;
             label11.Text = "Status Pesanan";
             label11.TextAlign = ContentAlignment.MiddleLeft;
@@ -271,10 +279,9 @@
             // 
             label10.Font = new Font("Georgia", 6.75F, FontStyle.Bold);
             label10.ForeColor = Color.FromArgb(75, 96, 67);
-            label10.Location = new Point(108, 79);
-            label10.Margin = new Padding(2, 0, 2, 0);
+            label10.Location = new Point(154, 132);
             label10.Name = "label10";
-            label10.Size = new Size(111, 19);
+            label10.Size = new Size(159, 32);
             label10.TabIndex = 14;
             label10.Text = "Status Pembayaran";
             label10.TextAlign = ContentAlignment.MiddleLeft;
@@ -283,10 +290,9 @@
             // 
             Tanggal.Font = new Font("Georgia", 6.75F, FontStyle.Bold);
             Tanggal.ForeColor = Color.FromArgb(75, 96, 67);
-            Tanggal.Location = new Point(108, 61);
-            Tanggal.Margin = new Padding(2, 0, 2, 0);
+            Tanggal.Location = new Point(154, 102);
             Tanggal.Name = "Tanggal";
-            Tanggal.Size = new Size(111, 19);
+            Tanggal.Size = new Size(159, 32);
             Tanggal.TabIndex = 13;
             Tanggal.Text = "Tanggal";
             Tanggal.TextAlign = ContentAlignment.MiddleLeft;
@@ -295,28 +301,29 @@
             // 
             label8.Font = new Font("Georgia", 6.75F, FontStyle.Bold);
             label8.ForeColor = Color.FromArgb(75, 96, 67);
-            label8.Location = new Point(108, 7);
-            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Location = new Point(154, 12);
             label8.Name = "label8";
-            label8.Size = new Size(111, 19);
+            label8.Size = new Size(159, 32);
             label8.TabIndex = 12;
             label8.Text = "Nama Customer";
             label8.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // picBuktiTransfer
             // 
-            picBuktiTransfer.Location = new Point(3, 112);
+            picBuktiTransfer.Location = new Point(4, 187);
+            picBuktiTransfer.Margin = new Padding(4, 5, 4, 5);
             picBuktiTransfer.Name = "picBuktiTransfer";
-            picBuktiTransfer.Size = new Size(100, 100);
+            picBuktiTransfer.Size = new Size(143, 167);
             picBuktiTransfer.SizeMode = PictureBoxSizeMode.StretchImage;
             picBuktiTransfer.TabIndex = 11;
             picBuktiTransfer.TabStop = false;
             // 
             // picBibit
             // 
-            picBibit.Location = new Point(3, 7);
+            picBibit.Location = new Point(4, 12);
+            picBibit.Margin = new Padding(4, 5, 4, 5);
             picBibit.Name = "picBibit";
-            picBibit.Size = new Size(100, 100);
+            picBibit.Size = new Size(143, 167);
             picBibit.SizeMode = PictureBoxSizeMode.StretchImage;
             picBibit.TabIndex = 10;
             picBibit.TabStop = false;
@@ -325,10 +332,9 @@
             // 
             lblEstimasi.Font = new Font("Georgia", 7F);
             lblEstimasi.ForeColor = Color.FromArgb(75, 96, 67);
-            lblEstimasi.Location = new Point(244, 133);
-            lblEstimasi.Margin = new Padding(2, 0, 2, 0);
+            lblEstimasi.Location = new Point(349, 222);
             lblEstimasi.Name = "lblEstimasi";
-            lblEstimasi.Size = new Size(150, 19);
+            lblEstimasi.Size = new Size(214, 32);
             lblEstimasi.TabIndex = 9;
             lblEstimasi.Text = "-";
             lblEstimasi.TextAlign = ContentAlignment.MiddleRight;
@@ -337,10 +343,9 @@
             // 
             lblTotalBayar.Font = new Font("Georgia", 7F);
             lblTotalBayar.ForeColor = Color.FromArgb(75, 96, 67);
-            lblTotalBayar.Location = new Point(244, 115);
-            lblTotalBayar.Margin = new Padding(2, 0, 2, 0);
+            lblTotalBayar.Location = new Point(349, 192);
             lblTotalBayar.Name = "lblTotalBayar";
-            lblTotalBayar.Size = new Size(150, 19);
+            lblTotalBayar.Size = new Size(214, 32);
             lblTotalBayar.TabIndex = 8;
             lblTotalBayar.Text = "-";
             lblTotalBayar.TextAlign = ContentAlignment.MiddleRight;
@@ -349,10 +354,9 @@
             // 
             lblStatusPesanan.Font = new Font("Georgia", 7F);
             lblStatusPesanan.ForeColor = Color.FromArgb(75, 96, 67);
-            lblStatusPesanan.Location = new Point(244, 97);
-            lblStatusPesanan.Margin = new Padding(2, 0, 2, 0);
+            lblStatusPesanan.Location = new Point(349, 162);
             lblStatusPesanan.Name = "lblStatusPesanan";
-            lblStatusPesanan.Size = new Size(150, 19);
+            lblStatusPesanan.Size = new Size(214, 32);
             lblStatusPesanan.TabIndex = 7;
             lblStatusPesanan.Text = "-";
             lblStatusPesanan.TextAlign = ContentAlignment.MiddleRight;
@@ -361,10 +365,9 @@
             // 
             lblTanggal.Font = new Font("Georgia", 7F);
             lblTanggal.ForeColor = Color.FromArgb(75, 96, 67);
-            lblTanggal.Location = new Point(244, 61);
-            lblTanggal.Margin = new Padding(2, 0, 2, 0);
+            lblTanggal.Location = new Point(349, 102);
             lblTanggal.Name = "lblTanggal";
-            lblTanggal.Size = new Size(150, 19);
+            lblTanggal.Size = new Size(214, 32);
             lblTanggal.TabIndex = 6;
             lblTanggal.Text = "-";
             lblTanggal.TextAlign = ContentAlignment.MiddleRight;
@@ -373,10 +376,9 @@
             // 
             lblStatusPembayaran.Font = new Font("Georgia", 7F);
             lblStatusPembayaran.ForeColor = Color.FromArgb(75, 96, 67);
-            lblStatusPembayaran.Location = new Point(244, 79);
-            lblStatusPembayaran.Margin = new Padding(2, 0, 2, 0);
+            lblStatusPembayaran.Location = new Point(349, 132);
             lblStatusPembayaran.Name = "lblStatusPembayaran";
-            lblStatusPembayaran.Size = new Size(150, 19);
+            lblStatusPembayaran.Size = new Size(214, 32);
             lblStatusPembayaran.TabIndex = 5;
             lblStatusPembayaran.Text = "-";
             lblStatusPembayaran.TextAlign = ContentAlignment.MiddleRight;
@@ -385,10 +387,9 @@
             // 
             lblNamaCustomer.Font = new Font("Georgia", 7F);
             lblNamaCustomer.ForeColor = Color.FromArgb(75, 96, 67);
-            lblNamaCustomer.Location = new Point(244, 7);
-            lblNamaCustomer.Margin = new Padding(2, 0, 2, 0);
+            lblNamaCustomer.Location = new Point(349, 12);
             lblNamaCustomer.Name = "lblNamaCustomer";
-            lblNamaCustomer.Size = new Size(150, 19);
+            lblNamaCustomer.Size = new Size(214, 32);
             lblNamaCustomer.TabIndex = 4;
             lblNamaCustomer.Text = "-";
             lblNamaCustomer.TextAlign = ContentAlignment.MiddleRight;
@@ -397,10 +398,9 @@
             // 
             lblJumlah.Font = new Font("Georgia", 7F);
             lblJumlah.ForeColor = Color.FromArgb(75, 96, 67);
-            lblJumlah.Location = new Point(244, 169);
-            lblJumlah.Margin = new Padding(2, 0, 2, 0);
+            lblJumlah.Location = new Point(349, 282);
             lblJumlah.Name = "lblJumlah";
-            lblJumlah.Size = new Size(150, 19);
+            lblJumlah.Size = new Size(214, 32);
             lblJumlah.TabIndex = 3;
             lblJumlah.Text = "-";
             lblJumlah.TextAlign = ContentAlignment.MiddleRight;
@@ -409,38 +409,26 @@
             // 
             lblNamaBibit.Font = new Font("Georgia", 7F);
             lblNamaBibit.ForeColor = Color.FromArgb(75, 96, 67);
-            lblNamaBibit.Location = new Point(244, 151);
-            lblNamaBibit.Margin = new Padding(2, 0, 2, 0);
+            lblNamaBibit.Location = new Point(349, 252);
             lblNamaBibit.Name = "lblNamaBibit";
-            lblNamaBibit.Size = new Size(150, 19);
+            lblNamaBibit.Size = new Size(214, 32);
             lblNamaBibit.TabIndex = 2;
             lblNamaBibit.Text = "-";
             lblNamaBibit.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // lblInfoAwal
-            // 
-            lblInfoAwal.Font = new Font("Georgia", 6.75F, FontStyle.Bold);
-            lblInfoAwal.ForeColor = Color.FromArgb(75, 96, 67);
-            lblInfoAwal.Location = new Point(1, 1);
-            lblInfoAwal.Margin = new Padding(2, 0, 2, 0);
-            lblInfoAwal.Name = "lblInfoAwal";
-            lblInfoAwal.Size = new Size(395, 218);
-            lblInfoAwal.TabIndex = 33;
-            lblInfoAwal.Text = "Pilih transaksi untuk melihat detail";
-            lblInfoAwal.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // FormKelolaPesanan
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(221, 234, 209);
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(1000, 563);
             ControlBox = false;
             Controls.Add(panelDetail);
             Controls.Add(flpPesanan);
             Controls.Add(lblJudul);
             Controls.Add(btnKembali);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "FormKelolaPesanan";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormKelolaPesanan";

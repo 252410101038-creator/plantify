@@ -73,5 +73,16 @@ namespace plantify.Views
 
             this.Hide();
         }
+
+        private void btnLaporanKeuangan_Click(object sender, EventArgs e)
+        {
+            FormLaporanPenjualan laporan = new FormLaporanPenjualan();
+
+            laporan.Owner = this;
+
+            laporan.Show();
+
+            this.Hide();
+        }
     }
 }
