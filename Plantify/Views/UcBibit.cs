@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Plantify
+namespace plantify.Views
 {
     public partial class UcBibit : UserControl
     {
@@ -27,7 +27,7 @@ namespace Plantify
 
         private void UcBibit_Load(object sender, EventArgs e)
         {
-
+             
         }
     }
 }

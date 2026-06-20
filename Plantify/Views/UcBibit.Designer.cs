@@ -1,4 +1,4 @@
-﻿namespace Plantify
+﻿namespace plantify.Views
 {
     partial class UcBibit
     {

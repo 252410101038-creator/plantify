@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Plantify
+namespace plantify.Views
 {
     public partial class UcRiwayat : UserControl
     {
@@ -22,6 +22,11 @@ namespace Plantify
         private void UcRiwayat_Click(object sender, EventArgs e)
         {
             this.OnClick(e);
+        }
+
+        private void lblTotalBayar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

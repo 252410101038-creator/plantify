@@ -11,9 +11,9 @@ namespace plantify.Controllers
         {
             using (var conn = DBConnection.GetConnection())
             {
-                string query = @"SELECT id_user, nama_user, email, no_telepon, alamat
+                string query = @"SELECT id_user, nama_user, email, username, no_telepon, alamat
                  FROM users 
-                 WHERE nama_user = @username 
+                 WHERE username = @username 
                  AND passwords = @password 
                  LIMIT 1";
 
@@ -28,12 +28,12 @@ namespace plantify.Controllers
                         {
                             return new Customer(
                                 Convert.ToInt32(reader["id_user"]),
-                                reader["nama_user"].ToString(),   // nama
-                                reader["email"].ToString(),       // email
-                                reader["nama_user"].ToString(),   // username
-                                "",                               // password
-                                reader["alamat"].ToString(),      // alamat
-                                reader["no_telepon"].ToString()   // no hp
+                                reader["nama_user"].ToString(),
+                                reader["email"].ToString(),
+                                reader["username"].ToString(),
+                                "",
+                                reader["alamat"].ToString(),
+                                reader["no_telepon"].ToString()
                             );
                         }
                     }

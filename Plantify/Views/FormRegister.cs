@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using plantify.Controllers;
 
@@ -11,6 +12,15 @@ namespace plantify.Views
         public FormRegister()
         {
             InitializeComponent();
+            txtNoHp.KeyPress += txtNoHp_KeyPress;
+        }
+
+        private void txtNoHp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void btnDaftar_Click(object sender, EventArgs e)
@@ -23,7 +33,7 @@ namespace plantify.Views
             string alamat = txtAlamat.Text.Trim();
             string noHp = txtNoHp.Text.Trim();
 
-            if (!ValidasiInput(nama, email, username, password, konfirmPassword))
+            if (!ValidasiInput(nama, email, username, password, konfirmPassword, noHp))
                 return;
 
             try
@@ -40,7 +50,6 @@ namespace plantify.Views
                     return;
                 }
 
-                // Panggil controller untuk simpan ke database
                 _customerController.Register(nama, email, username, password, alamat, noHp);
 
                 MessageBox.Show("Registrasi berhasil! Silakan login.", "Sukses",
@@ -58,7 +67,7 @@ namespace plantify.Views
         }
 
         private bool ValidasiInput(string nama, string email, string username,
-                                    string password, string konfirmPassword)
+                                    string password, string konfirmPassword, string noHp)
         {
             if (string.IsNullOrEmpty(nama) || string.IsNullOrEmpty(email) ||
                 string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
@@ -82,6 +91,18 @@ namespace plantify.Views
             if (!email.Contains("@") || !email.Contains("."))
             {
                 lblError.Text = "Format email tidak valid!";
+                return false;
+            }
+
+            if (!noHp.All(char.IsDigit))
+            {
+                lblError.Text = "No HP hanya boleh berisi angka!";
+                return false;
+            }
+
+            if (noHp.Length < 10 || noHp.Length > 13)
+            {
+                lblError.Text = "No HP harus 10-13 digit!";
                 return false;
             }
 

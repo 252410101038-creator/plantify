@@ -10,7 +10,7 @@ namespace plantify.Controllers
         {
             using (var conn = DBConnection.GetConnection())
             {
-                string query = "SELECT COUNT(*) FROM users WHERE email = @username";
+                string query = "SELECT COUNT(*) FROM users WHERE username = @username";
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", username);
@@ -38,13 +38,14 @@ namespace plantify.Controllers
             using (var conn = DBConnection.GetConnection())
             {
                 string query = @"INSERT INTO users 
-                                (nama_user, email, passwords, alamat, no_telepon, is_admin) 
-                                VALUES (@nama, @email, @password, @alamat, @noHp, false)";
+                                (nama_user, email, username, passwords, alamat, no_telepon, is_admin) 
+                                VALUES (@nama, @email, @username, @password, @alamat, @noHp, false)";
 
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@nama", nama);
                     cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
                     cmd.Parameters.AddWithValue("@alamat", alamat);
                     cmd.Parameters.AddWithValue("@noHp", noHp);

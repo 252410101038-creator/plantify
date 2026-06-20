@@ -86,7 +86,7 @@ namespace plantify.Views
                 MessageBox.Show("ID User = " + idUser);
 
                 idTransaksi = Convert.ToInt32(cmd.ExecuteScalar());
-                
+
                 string queryDetail = @"
 INSERT INTO detail_transaksi
 (
@@ -103,14 +103,14 @@ VALUES
     @subtotal
 )";
 
-NpgsqlCommand cmdDetail = new NpgsqlCommand(queryDetail, conn);
+                NpgsqlCommand cmdDetail = new NpgsqlCommand(queryDetail, conn);
 
-cmdDetail.Parameters.AddWithValue("@id_transaksi", idTransaksi);
-cmdDetail.Parameters.AddWithValue("@id_bibit", idBibit);
-cmdDetail.Parameters.AddWithValue("@jumlah", jumlah);
-cmdDetail.Parameters.AddWithValue("@subtotal", totalBayar);
+                cmdDetail.Parameters.AddWithValue("@id_transaksi", idTransaksi);
+                cmdDetail.Parameters.AddWithValue("@id_bibit", idBibit);
+                cmdDetail.Parameters.AddWithValue("@jumlah", jumlah);
+                cmdDetail.Parameters.AddWithValue("@subtotal", totalBayar);
 
-cmdDetail.ExecuteNonQuery();
+                cmdDetail.ExecuteNonQuery();
 
                 string queryUpdateStok = @"
 UPDATE bibit

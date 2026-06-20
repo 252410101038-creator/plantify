@@ -54,7 +54,7 @@
         }
 
         // Constructor
-        
+
         public Customer()
         {
 

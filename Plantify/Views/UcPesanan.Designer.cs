@@ -1,4 +1,4 @@
-﻿namespace Plantify
+﻿namespace plantify.Views
 {
     partial class UcPesanan
     {
@@ -37,10 +37,9 @@
             lblIdTransaksi.AccessibleRole = AccessibleRole.PageTab;
             lblIdTransaksi.Font = new Font("Georgia", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblIdTransaksi.ForeColor = Color.FromArgb(75, 96, 67);
-            lblIdTransaksi.Location = new Point(4, 7);
-            lblIdTransaksi.Margin = new Padding(4, 0, 4, 0);
+            lblIdTransaksi.Location = new Point(3, 6);
             lblIdTransaksi.Name = "lblIdTransaksi";
-            lblIdTransaksi.Size = new Size(46, 38);
+            lblIdTransaksi.Size = new Size(37, 30);
             lblIdTransaksi.TabIndex = 1;
             lblIdTransaksi.Text = "001";
             lblIdTransaksi.TextAlign = ContentAlignment.MiddleLeft;
@@ -49,23 +48,23 @@
             // 
             lblStatusPesanan.Font = new Font("Microsoft Sans Serif", 8.25F);
             lblStatusPesanan.ForeColor = Color.FromArgb(75, 96, 67);
-            lblStatusPesanan.Location = new Point(76, 7);
-            lblStatusPesanan.Margin = new Padding(4, 0, 4, 0);
+            lblStatusPesanan.Location = new Point(61, 6);
             lblStatusPesanan.Name = "lblStatusPesanan";
-            lblStatusPesanan.Size = new Size(197, 38);
+            lblStatusPesanan.Size = new Size(158, 30);
             lblStatusPesanan.TabIndex = 3;
             lblStatusPesanan.Text = "Menunggu Diproses";
             lblStatusPesanan.TextAlign = ContentAlignment.MiddleLeft;
+            lblStatusPesanan.Click += lblStatusPesanan_Click;
             // 
             // UcPesanan
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lblStatusPesanan);
             Controls.Add(lblIdTransaksi);
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "UcPesanan";
-            Size = new Size(277, 50);
+            Size = new Size(222, 40);
             ResumeLayout(false);
         }
 

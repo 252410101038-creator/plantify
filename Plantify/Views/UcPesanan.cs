@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Plantify
+namespace plantify.Views
 {
     public partial class UcPesanan : UserControl
     {
@@ -15,5 +15,9 @@ namespace Plantify
             InitializeComponent();
         }
 
+        private void lblStatusPesanan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

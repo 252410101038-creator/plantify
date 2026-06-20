@@ -3,6 +3,7 @@ using plantify.Database;
 using System;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using plantify.Views;
 
 namespace Plantify.Views
 {
@@ -371,6 +372,10 @@ WHERE id_transaksi = @id";
             }
         }
 
+        private void FormKelolaPesanan_Load(object sender, EventArgs e)
+        {
+
+        }
         private void btnTolak_Click(object sender, EventArgs e)
         {
             DialogResult hasil =
