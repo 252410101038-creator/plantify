@@ -36,6 +36,13 @@ namespace plantify.Views
         private void FormKatalog_Load(object sender, EventArgs e)
         {
             lblSambutan.Text = $"Selamat datang, {_customerLogin.Nama}!";
+
+
+            foreach (string kategori in _bibitController.GetKategori())
+            {
+                
+            }
+
             MuatKatalog();
             SetupDataGridView();
         }
@@ -145,7 +152,7 @@ namespace plantify.Views
 
         private void cmbKategori_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
+            MuatKatalog(txtCari.Text.Trim()); 
         }
 
         private void txtCari_TextChanged(object sender, EventArgs e)

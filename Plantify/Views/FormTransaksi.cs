@@ -72,7 +72,7 @@ namespace plantify.Views
             lblDetailJenisBibit.Text = jenisBibit;
             lblDetailHarga.Text = "Rp " + harga.ToString("N0");
             lblDetailStok.Text = stok.ToString();
-            numJumlah.Maximum = stok;
+            numJumlah.Maximum = 1000000;
 
             rtbDeskripsi.Text = deskripsi;
             if (!string.IsNullOrEmpty(gambar) &&
@@ -120,27 +120,26 @@ namespace plantify.Views
         private void btnBayar_Click(object sender, EventArgs e)
         {
             int jumlah = (int)numJumlah.Value;
+
+            if (jumlah <= 0)
+            {
+                MessageBox.Show(
+                    "Jumlah pembelian harus lebih dari 0!",
+                    "Peringatan");
+
+                return;
+            }
+
             if (jumlah > stok)
             {
                 MessageBox.Show(
-                    "Jumlah pembelian melebihi stok yang tersedia!",
+                    $"Jumlah pembelian melebihi stok yang tersedia.\nStok saat ini hanya {stok}.",
                     "Peringatan",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
 
                 return;
             }
-            totalBayar = harga * jumlah;
-
-            MessageBox.Show(totalBayar.ToString());
-            FormPembayaran pembayaran = new FormPembayaran();
-            pembayaran.totalBayar = totalBayar;
-            pembayaran.idBibit = idBibit;
-            pembayaran.jumlah = jumlah;
-            pembayaran.idUser = _customer.Id;
-
-            pembayaran.Owner = this;
-            pembayaran.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)

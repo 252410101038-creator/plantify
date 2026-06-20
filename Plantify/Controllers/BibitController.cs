@@ -47,10 +47,12 @@ namespace plantify.Controllers
                  WHERE stok > 0";
 
                 if (!string.IsNullOrEmpty(keyword))
-                    query += " AND LOWER(nama_bibit) LIKE LOWER(@keyword)";
-
-                if (!string.IsNullOrEmpty(kategori) && kategori != "Semua Kategori")
-                    query += " AND jenis_bibit = @kategori";
+                {
+                    query += @" AND (
+                        LOWER(nama_bibit) LIKE LOWER(@keyword)
+                        OR LOWER(jenis_bibit) LIKE LOWER(@keyword)
+                    )";
+                }
 
                 query += " ORDER BY nama_bibit";
 
