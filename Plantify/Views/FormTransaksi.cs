@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
+using System.IO;
 using System.Windows.Forms;
-using System.Data;
 using plantify.Models;
 
 namespace plantify.Views
@@ -20,16 +17,20 @@ namespace plantify.Views
         private string deskripsi;
         private string gambar;
         private int stok;
+
         private FormKatalog _formKatalog;
         private Customer _customer;
+
         public FormTransaksi()
         {
             InitializeComponent();
         }
+
         public FormKatalog FormKatalogAsal
         {
             get { return _formKatalog; }
         }
+
         public FormTransaksi(
             string namaBibit,
             string jenisBibit,
@@ -45,6 +46,7 @@ namespace plantify.Views
             this.harga = harga;
             this.stok = stok;
         }
+
         public FormTransaksi(
             DataRow bibit,
             Customer customer,
@@ -52,17 +54,18 @@ namespace plantify.Views
         {
             InitializeComponent();
 
-            this.namaBibit = bibit["nama_bibit"].ToString();
-            this.jenisBibit = bibit["jenis_bibit"].ToString();
-            this.deskripsi = bibit["deskripsi"].ToString();
-            this.harga = Convert.ToInt32(bibit["harga"]);
-            this.gambar = bibit["gambar"].ToString();
-            this.stok = Convert.ToInt32(bibit["stok"]);
-            this.idBibit = Convert.ToInt32(bibit["id_bibit"]);
+            namaBibit = bibit["nama_bibit"].ToString();
+            jenisBibit = bibit["jenis_bibit"].ToString();
+            deskripsi = bibit["deskripsi"].ToString();
+            harga = Convert.ToInt32(bibit["harga"]);
+            gambar = bibit["gambar"].ToString();
+            stok = Convert.ToInt32(bibit["stok"]);
+            idBibit = Convert.ToInt32(bibit["id_bibit"]);
 
             _customer = customer;
             _formKatalog = formKatalog;
         }
+
         private void FormTransaksi_Load(object sender, EventArgs e)
         {
             lblNamaBibit.Text = "Nama Bibit : " + namaBibit;
@@ -75,11 +78,67 @@ namespace plantify.Views
             numJumlah.Maximum = 1000000;
 
             rtbDeskripsi.Text = deskripsi;
-            if (!string.IsNullOrEmpty(gambar) &&
-    File.Exists(gambar))
+
+            if (!string.IsNullOrEmpty(gambar) && File.Exists(gambar))
             {
                 picBibit.Image = Image.FromFile(gambar);
             }
+
+            int jumlah = (int)numJumlah.Value;
+
+            totalBayar = harga * jumlah;
+
+            lblTotal.Text = "Rp " + totalBayar.ToString("N0");
+        }
+
+        private void btnBayar_Click(object sender, EventArgs e)
+        {
+            int jumlah = (int)numJumlah.Value;
+
+            if (jumlah <= 0)
+            {
+                MessageBox.Show(
+                    "Jumlah pembelian harus lebih dari 0!",
+                    "Peringatan",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (jumlah > stok)
+            {
+                MessageBox.Show(
+                    $"Jumlah pembelian melebihi stok yang tersedia.\nStok saat ini hanya {stok}.",
+                    "Peringatan",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            totalBayar = harga * jumlah;
+
+            FormPembayaran pembayaran = new FormPembayaran();
+
+            pembayaran.totalBayar = totalBayar;
+            pembayaran.idBibit = idBibit;
+            pembayaran.jumlah = jumlah;
+            pembayaran.idUser = _customer.Id;
+
+            pembayaran.Owner = this;
+
+            pembayaran.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _formKatalog.Show();
+            this.Close();
+        }
+
+        private void numJumlah_ValueChanged(object sender, EventArgs e)
+        {
             int jumlah = (int)numJumlah.Value;
 
             totalBayar = harga * jumlah;
@@ -117,37 +176,6 @@ namespace plantify.Views
 
         }
 
-        private void btnBayar_Click(object sender, EventArgs e)
-        {
-            int jumlah = (int)numJumlah.Value;
-
-            if (jumlah <= 0)
-            {
-                MessageBox.Show(
-                    "Jumlah pembelian harus lebih dari 0!",
-                    "Peringatan");
-
-                return;
-            }
-
-            if (jumlah > stok)
-            {
-                MessageBox.Show(
-                    $"Jumlah pembelian melebihi stok yang tersedia.\nStok saat ini hanya {stok}.",
-                    "Peringatan",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
-                return;
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            _formKatalog.Show();
-            this.Close();
-        }
-
         private void lblTextTotal_Click(object sender, EventArgs e)
         {
 
@@ -156,15 +184,6 @@ namespace plantify.Views
         private void lblHarga_Click_1(object sender, EventArgs e)
         {
 
-        }
-
-        private void numJumlah_ValueChanged(object sender, EventArgs e)
-        {
-            int jumlah = (int)numJumlah.Value;
-
-            totalBayar = harga * jumlah;
-
-            lblTotal.Text = "Rp " + totalBayar.ToString("N0");
         }
     }
 }
