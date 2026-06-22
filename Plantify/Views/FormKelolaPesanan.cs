@@ -391,7 +391,7 @@ WHERE id_transaksi = @id";
             try
             {
                 NpgsqlConnection conn =
-                    DBConnection.GetConnection();
+           DBConnection.GetConnection();
 
                 string query = @"
 UPDATE transaksi
@@ -403,10 +403,34 @@ WHERE id_transaksi = @id";
                 NpgsqlCommand cmd =
                     new NpgsqlCommand(query, conn);
 
-                cmd.Parameters.AddWithValue("@id",
+                cmd.Parameters.AddWithValue(
+                    "@id",
                     idTransaksiDipilih);
 
                 cmd.ExecuteNonQuery();
+
+                // KEMBALIKAN STOK
+                string queryStok = @"
+UPDATE bibit
+SET stok = stok + (
+    SELECT dt.jumlah
+    FROM detail_transaksi dt
+    WHERE dt.id_transaksi = @id
+)
+WHERE id_bibit = (
+    SELECT dt.id_bibit
+    FROM detail_transaksi dt
+    WHERE dt.id_transaksi = @id
+)";
+
+                NpgsqlCommand cmdStok =
+                    new NpgsqlCommand(queryStok, conn);
+
+                cmdStok.Parameters.AddWithValue(
+                    "@id",
+                    idTransaksiDipilih);
+
+                cmdStok.ExecuteNonQuery();
 
                 conn.Close();
 

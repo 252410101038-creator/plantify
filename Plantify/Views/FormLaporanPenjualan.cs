@@ -85,19 +85,17 @@ namespace Plantify.Views
                 int bulan = cmbBulan.SelectedIndex + 1;
                 int tahun = Convert.ToInt32(cmbTahun.SelectedItem);
 
-
                 string query = @"
         SELECT COALESCE(SUM(total_bayar),0)
         FROM transaksi
         WHERE EXTRACT(MONTH FROM tanggal_transaksi) = @bulan
-        AND EXTRACT(YEAR FROM tanggal_transaksi) = @tahun";
-
+        AND EXTRACT(YEAR FROM tanggal_transaksi) = @tahun
+        AND status_pesanan = 'Selesai'";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@bulan", bulan);
                 cmd.Parameters.AddWithValue("@tahun", tahun);
-
 
                 int total = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -106,49 +104,42 @@ namespace Plantify.Views
 
                 LoadChart(bulan, tahun);
 
-
                 conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
+
         private void LoadChart(int bulan, int tahun)
         {
             try
             {
                 NpgsqlConnection conn = DBConnection.GetConnection();
 
-
                 string query = @"
-        SELECT 
+        SELECT
             EXTRACT(DAY FROM tanggal_transaksi) AS tanggal,
             COUNT(id_transaksi) AS jumlah
         FROM transaksi
         WHERE EXTRACT(MONTH FROM tanggal_transaksi) = @bulan
         AND EXTRACT(YEAR FROM tanggal_transaksi) = @tahun
+        AND status_pesanan = 'Selesai'
         GROUP BY tanggal
         ORDER BY tanggal";
-
 
                 NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@bulan", bulan);
                 cmd.Parameters.AddWithValue("@tahun", tahun);
 
-
                 NpgsqlDataReader dr = cmd.ExecuteReader();
-
 
                 chartTransaksi.Series.Clear();
 
-
                 Series series = new Series("Jumlah Transaksi");
-
                 series.ChartType = SeriesChartType.Column;
-
 
                 while (dr.Read())
                 {
@@ -158,13 +149,11 @@ namespace Plantify.Views
                     );
                 }
 
-
                 chartTransaksi.Series.Add(series);
 
                 chartTransaksi.ChartAreas[0].AxisX.LabelStyle.Angle = 0;
                 chartTransaksi.ChartAreas[0].AxisX.Title = "Tanggal";
                 chartTransaksi.ChartAreas[0].AxisY.Title = "Jumlah Transaksi";
-
 
                 conn.Close();
             }
